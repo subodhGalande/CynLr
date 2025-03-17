@@ -48,7 +48,7 @@ const ImageCarousal = () => {
               className="    bg-[#151619] rounded-xl h-fit w-[22rem] shadow-lg overflow-hidden"
             >
               <div className="relative w-full aspect-[3/4] p-4 rounded-lg ">
-                <img src={item.path} className="rounded-lg" />
+                <img loading="lazy" src={item.path} className="rounded-lg" />
               </div>
               <div className="p-4 text-start">
                 <h2 className="text-2xl font-thin font-heading text-accent">

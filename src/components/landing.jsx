@@ -1,6 +1,6 @@
 import Hero from "./hero";
 import HoverLinks from "./HoverLinks";
-import ImageCarousal from "./imageCarousal";
+import ImageCarousal from "./imageCarousel";
 
 const Landing = () => {
   return (

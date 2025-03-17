@@ -11,7 +11,7 @@ const Hero = () => {
           playsInline
           className="absolute top-0 left-0 w-full h-full object-cover"
         >
-          <source src="hero.mp4" type="video/mp4" />
+          <source src="hero.webm" type="video/webm" />
         </video>
         <div className="absolute inset-0 bg-black/50 w-full h-full"></div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">

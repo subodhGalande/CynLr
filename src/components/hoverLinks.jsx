@@ -32,6 +32,14 @@ const HoverLinks = () => {
       image: "/parts.gif",
       title: "GIF with text",
     },
+    factory: {
+      image: "/preview.png",
+      title: "PDF with text",
+    },
+    Phones: {
+      image: "/video-preview.webp",
+      title: "4k Video with text",
+    },
   };
 
   return (
@@ -52,14 +60,30 @@ const HoverLinks = () => {
             future
           </a>{" "}
           in which a single factory is capable of manufacturing multiple product
-          models and endless product variations. The same factory makes Cars
-          today and Mobile Phones tomorrow. This is the future of manufacturing
-          we envision with{" "}
+          models and endless product variations. The same{" "}
+          <a
+            href="/withpdf"
+            onMouseEnter={handleMouseOver}
+            onMouseLeave={() => setIsHovered(false)}
+            className=" text-accent"
+          >
+            factory
+          </a>{" "}
+          makes Cars today and Mobile{" "}
           <a
             onMouseEnter={handleMouseOver}
             onMouseLeave={() => setIsHovered(false)}
-            href="/withgif"
             className=" text-accent"
+            href="/withVideo"
+          >
+            Phones
+          </a>{" "}
+          tomorrow. This is the future of manufacturing we envision with{" "}
+          <a
+            onMouseEnter={handleMouseOver}
+            onMouseLeave={() => setIsHovered(false)}
+            className=" text-accent"
+            href="/withgif"
           >
             CyRo
           </a>{" "}
