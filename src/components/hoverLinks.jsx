@@ -49,7 +49,7 @@ const HoverLinks = () => {
           Universal <span className="text-white">Factories</span>
         </h1>
 
-        <p className="text-grey sm:text-[18px] font-sans sm:w-3/6">
+        <p className="text-grey font-sans sm:w-3/6">
           Imagine a{" "}
           <a
             onMouseEnter={handleMouseOver}
@@ -106,7 +106,7 @@ const HoverLinks = () => {
             <h1 className="font-heading text-2xl font-thin text-accent ">
               {linkInfo[linktext].title}
             </h1>
-            <p className="font-sans text-[14px] text-grey">
+            <p className="font-sans text-[.9rem] text-grey">
               Click the link to explore detailed insights and learn more about
               this topic
             </p>
