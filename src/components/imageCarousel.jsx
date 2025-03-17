@@ -33,7 +33,7 @@ const images = [
   },
 ];
 
-const ImageCarousal = () => {
+const ImageCarousel = () => {
   return (
     <>
       <section className="mt-32 text-center">
@@ -64,4 +64,4 @@ const ImageCarousal = () => {
   );
 };
 
-export default ImageCarousal;
+export default ImageCarousel;
