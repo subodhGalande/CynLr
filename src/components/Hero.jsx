@@ -17,7 +17,7 @@ const Hero = () => {
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
           <img src="/logo.png" alt="cynlr" className=" aspect-auto w-5xl " />
           <p className="mt-13 text-white text-3xl font-heading ">
-            Robot that's <strong className="text-accent ">"Intuitive" </strong> 
+            Robot that's <strong className="text-accent ">"Intuitive" </strong>
             with Objects
           </p>
         </div>
