@@ -13,10 +13,10 @@ const Hero = () => {
         >
           <source src="hero.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-black/60 w-full h-full"></div>
+        <div className="absolute inset-0 bg-black/50 w-full h-full"></div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
           <img src="/logo.png" alt="cynlr" className=" aspect-auto w-5xl " />
-          <p className="mt-13 text-white/80 text-3xl font-heading ">
+          <p className="mt-13 text-white text-3xl font-heading ">
             Robot that's <strong className="text-accent ">"Intuitive" </strong> 
             with Objects
           </p>
