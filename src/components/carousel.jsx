@@ -11,19 +11,19 @@ const Carousel = () => {
 
   useGSAP(() => {
     gsap.to(containerRef.current, {
-      rotation: 270, // Full rotation to show all 4 images
+      rotation: 270,
       ease: "none",
       scrollTrigger: {
-        trigger: sectionRef.current, // Pinning inside this section only
-        start: "top top", // Start when section enters viewport
-        end: "bottom top", // Ends when section scrolls out
-        scrub: 1.8, // Smooth animation on scroll
-        pin: true, // Keeps the container pinned within the section
-        anticipatePin: 1, // Helps smooth out pinning
+        trigger: sectionRef.current,
+        start: "top top",
+        end: "bottom top",
+        scrub: 1.8,
+        pin: true,
+        anticipatePin: 1,
         snap: {
-          snapTo: (progress) => Math.round(progress * 3) / 3, // Ensures snapping to the next card
-          duration: 0.2, // Quick but smooth snap transition
-          ease: "none", // Natural easing effect
+          snapTo: (progress) => Math.round(progress * 3) / 3,
+          duration: 0.2,
+          ease: "none",
         },
       },
     });
@@ -64,7 +64,7 @@ const Carousel = () => {
           <span className="text-accent ">Grasp any object</span>
           <br /> without pre-training
         </h1>
-        <div className=" border-2 w-screen h-screen mx-auto  overflow-hidden ">
+        <div className="  w-screen h-screen mx-auto  overflow-hidden ">
           <div
             ref={containerRef}
             className="fixed mt-32 top-1/2 left-52 w-[70rem] h-[70rem] rounded-full border-2 border-grey/10 flex items-center justify-center"
