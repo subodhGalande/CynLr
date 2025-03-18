@@ -1,48 +1,74 @@
-import { LazyLoadComponent } from "react-lazy-load-image-component";
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const images = [
-  {
-    path: "/robot-1.jpg",
-    title: "Grasp any object",
-    text: "Just like how humans can grasp unknown objects they have never seen before,",
-  },
-  {
-    path: "/robot-2.jpg",
-    title: "Learn to manipulate",
-    text: "We identify an object by its Shape & Colour.",
-  },
-  {
-    path: "/robot-3.jpg",
-    title: "Make oriented placements",
-    text: "One can’t build a car by throwing parts at each other.",
-  },
-  {
-    path: "/robot-4.jpg",
-    title: "Robots deserve better",
-    text: "The Human eye doesn't use different sensors for Motion, Depth, and Colour.",
-  },
-  {
-    path: "/robot-5.jpg",
-    title: "Convergence of Eyes",
-    text: "Ever wondered why all animals 'Converge' their eyes? ",
-  },
-  {
-    path: "/robot-6.jpg",
-    title: "Create rich visual",
-    text: "'Sight' is not 'Vision'. Vision occurs when sight overlaps with all other senses,",
-  },
-];
+gsap.registerPlugin(ScrollTrigger);
 
 const ImageCarousel = () => {
+  const containerRef = useRef();
+  const sectionRef = useRef();
+
+  useGSAP(() => {
+    gsap.to(containerRef.current, {
+      rotation: 270, // Full rotation to show all 4 images
+      ease: "none",
+      scrollTrigger: {
+        trigger: sectionRef.current, // Pinning inside this section only
+        start: "top top", // Start when section enters viewport
+        end: "bottom top", // Ends when section scrolls out
+        scrub: 1.8, // Smooth animation on scroll
+        pin: true, // Keeps the container pinned within the section
+        anticipatePin: 1, // Helps smooth out pinning
+        snap: {
+          snapTo: (progress) => Math.round(progress * 3) / 3, // Ensures snapping to the next card
+          duration: 0.2, // Quick but smooth snap transition
+          ease: "none", // Natural easing effect
+        },
+      },
+    });
+  }, []);
+
+  const images = [
+    {
+      path: "/robot-1.jpg",
+      title: "Grasp any object",
+      text: "Just like how humans can grasp unknown objects they have never seen before,",
+    },
+    {
+      path: "/robot-2.jpg",
+      title: "Learn to manipulate",
+      text: "We identify an object by its Shape & Colour.",
+    },
+    {
+      path: "/robot-3.jpg",
+      title: "Make oriented placements",
+      text: "One can’t build a car by throwing parts at each other.",
+    },
+    {
+      path: "/robot-4.jpg",
+      title: "Robots deserve better",
+      text: "The Human eye doesn't use different sensors for Motion, Depth, and Colour.",
+    },
+  ];
   return (
     <>
-      <section className=" mt-20 h-fit w-full overflow-hidden text-center">
-        <h1 className="font-thin font-heading text-5xl leading-16 text-white">
+      <section
+        ref={sectionRef}
+        className=" relative mt-20 h-screen w-full overflow-hidden text-center"
+      >
+        <h1
+          id="triggerHeading"
+          className=" absolute top-10 left-1/2 -translate-x-1/2 text-5xl font-thin font-heading text-white text-center"
+        >
           <span className="text-accent ">Grasp any object</span>
           <br /> without pre-training
         </h1>
-        <div className="w-full h-60 mt-86">
-          <div className="mx-auto relative  w-[70rem] h-[70rem] rounded-full  border border-white">
+        <div className=" border-2 w-screen h-screen mx-auto  overflow-hidden ">
+          <div
+            ref={containerRef}
+            className="fixed mt-32 top-1/2 left-52 w-[70rem] h-[70rem] rounded-full border border-white flex items-center justify-center"
+          >
             {/* top center */}
             <div className=" absolute left-1/2 -top-72 -translate-x-1/2 rotate-0 flex-col flex bg-[#151619] rounded-xl h-[500px] w-[500px] shadow-lg overflow-hidden">
               <div className=" w-full h-5/6 overflow-hidden rounded-lg ">
@@ -129,6 +155,7 @@ const ImageCarousel = () => {
             </div>
           ))}
         </div> */}
+        <div className="h-screen w-full"></div>
       </section>
     </>
   );
