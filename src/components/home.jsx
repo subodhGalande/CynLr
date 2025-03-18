@@ -1,13 +1,13 @@
-import Hero from "./Hero";
-import HoverLinks from "./HoverLinks";
-import ImageCarousel from "./imageCarousel";
+import HeroSection from "./heroSection";
+import Links from "./links";
+import Carousel from "./carousel";
 
 const Home = () => {
   return (
     <>
-      <Hero />
-      <HoverLinks />
-      <ImageCarousel />
+      <HeroSection />
+      <Links />
+      <Carousel />
     </>
   );
 };
