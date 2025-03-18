@@ -67,7 +67,7 @@ const ImageCarousel = () => {
         <div className=" border-2 w-screen h-screen mx-auto  overflow-hidden ">
           <div
             ref={containerRef}
-            className="fixed mt-32 top-1/2 left-52 w-[70rem] h-[70rem] rounded-full border border-white flex items-center justify-center"
+            className="fixed mt-32 top-1/2 left-52 w-[70rem] h-[70rem] rounded-full border-2 border-grey/10 flex items-center justify-center"
           >
             {/* top center */}
             <div className=" absolute left-1/2 -top-72 -translate-x-1/2 rotate-0 flex-col flex bg-[#151619] rounded-xl h-[500px] w-[500px] shadow-lg overflow-hidden">
