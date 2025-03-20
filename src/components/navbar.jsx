@@ -7,12 +7,27 @@ const Navbar = () => {
             <img src="logo.png" alt="logo" className="aspect-auto w-32 " />
           </a>
         </div>
-        <a
-          href="https://www.cynlr.com/"
-          className="px-6 py-2 border-2 border-accent  rounded-lg hover:bg-accent hover:text-black transition font-sans text-accent "
-        >
-          GET IN TOUCH
-        </a>
+        <div className="flex items-center gap-8">
+          <a
+            href="#3d"
+            className="text-white hover:text-accent hover:duration-150"
+          >
+            Configurator
+          </a>
+          <a
+            href="#carousel"
+            className="text-white hover:text-accent hover:duration-150"
+          >
+            Carousel
+          </a>
+          <a
+            href="https://www.cynlr.com/"
+            target="_blank"
+            className="px-6 py-2 border-2 border-accent hover:duration-150 rounded-lg hover:bg-accent hover:text-black transition font-sans text-accent "
+          >
+            GET IN TOUCH
+          </a>
+        </div>
       </nav>
     </>
   );

@@ -11,7 +11,7 @@ const Carousel = () => {
 
   useGSAP(() => {
     gsap.to(containerRef.current, {
-      rotation: 270,
+      rotation: -270,
       ease: "none",
       scrollTrigger: {
         trigger: sectionRef.current,
@@ -54,8 +54,9 @@ const Carousel = () => {
   return (
     <>
       <section
+        id="carousel"
         ref={sectionRef}
-        className=" relative mt-20 h-screen w-full overflow-hidden text-center"
+        className="relative mt-20 h-screen w-full overflow-hidden text-center"
       >
         <h1
           id="triggerHeading"
@@ -67,7 +68,7 @@ const Carousel = () => {
         <div className="  w-screen h-screen mx-auto  overflow-hidden ">
           <div
             ref={containerRef}
-            className="fixed mt-32 top-1/2 left-52 w-[70rem] h-[70rem] rounded-full border-2 border-grey/10 flex items-center justify-center"
+            className="fixed top-[65rem] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[70rem] h-[70rem] rounded-full border-2 border-grey/10 flex items-center justify-center"
           >
             {/* top center */}
             <div className=" absolute left-1/2 -top-72 -translate-x-1/2 rotate-0 flex-col flex bg-[#151619] rounded-xl h-[500px] w-[500px] shadow-lg overflow-hidden">
@@ -137,24 +138,6 @@ const Carousel = () => {
           </div>
         </div>
 
-        {/* <div className=" h-screen w-full flex flex-wrap gap-4 justify-center mt-20 ">
-          {images.map((item, index) => (
-            <div
-              key={index}
-              className="    bg-[#151619] rounded-xl h-fit w-[22rem] shadow-lg overflow-hidden"
-            >
-              <div className="relative w-full aspect-[3/4] p-4 rounded-lg ">
-                <img loading="lazy" src={item.path} className="rounded-lg" />
-              </div>
-              <div className="p-4 text-start">
-                <h2 className="text-2xl font-thin font-heading text-accent">
-                  {item.title}
-                </h2>
-                <p className="mt-2 text-grey">{item.text}</p>
-              </div>
-            </div>
-          ))}
-        </div> */}
         <div className="h-screen w-full"></div>
       </section>
     </>

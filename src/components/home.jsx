@@ -1,6 +1,8 @@
 import HeroSection from "./heroSection";
 import Links from "./links";
 import Carousel from "./carousel";
+import Model3d from "./model";
+import Footer from "./footer";
 
 const Home = () => {
   return (
@@ -8,6 +10,8 @@ const Home = () => {
       <HeroSection />
       <Links />
       <Carousel />
+      <Model3d />
+      <Footer />
     </>
   );
 };

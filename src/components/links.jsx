@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Links = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -9,6 +11,8 @@ const Links = () => {
     right: 0,
     top: 0,
   });
+
+  const tooltipRef = useRef(null);
 
   const handleMouseOver = (e) => {
     let linkPosition = e.target.getBoundingClientRect();
@@ -41,6 +45,16 @@ const Links = () => {
       title: "4k Video with text",
     },
   };
+
+  useGSAP(() => {
+    if (isHovered) {
+      gsap.fromTo(
+        tooltipRef.current,
+        { opacity: 0, scaleY: 0, transformOrigin: "top center" },
+        { opacity: 1, scaleY: 1, duration: 0.4, ease: "power2.out" }
+      );
+    }
+  }, [isHovered]);
 
   return (
     <section className=" sm:h-96 sm:w-full bg-dark flex sm:justify-center sm:items-center">
@@ -91,7 +105,8 @@ const Links = () => {
         </p>
         {isHovered && linktext in linkInfo && (
           <div
-            className="fixed bg-[#151619] flex flex-col h-fit w-64 gap-2 text-white p-3 rounded-lg shadow-lg transition-opacity duration-300 pointer-events-none"
+            ref={tooltipRef}
+            className="fixed z-50 bg-[#151619] flex flex-col h-fit w-64 gap-2 text-white p-3 rounded-lg shadow-lg transition-opacity duration-300 pointer-events-none"
             style={{
               left: `${position.left}px`,
               top: `${position.top}px`,
